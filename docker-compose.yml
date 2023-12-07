@@ -2,7 +2,7 @@ version: '3'
 
 services:
   spark-master:
-    image: cluster-db
+    image: billalmiron/cluster-db:latest
     ports:
       - "9090:8080"
       - "7077:7077"
@@ -13,7 +13,7 @@ services:
       - SPARK_LOCAL_IP=spark-master
       - SPARK_WORKLOAD=master
   spark-worker-a:
-    image: cluster-db
+    image: billalmiron/cluster-db:latest
     ports:
       - "9091:8080"
       - "7000:7000"
@@ -31,7 +31,7 @@ services:
        - ./apps:/opt/spark-apps
        - ./data:/opt/spark-data
   spark-worker-b:
-    image: cluster-db
+    image: billalmiron/cluster-db:latest
     ports:
       - "9092:8080"
       - "7001:7000"
@@ -49,7 +49,7 @@ services:
         - ./apps:/opt/spark-apps
         - ./data:/opt/spark-data
   spark-worker-c:
-    image: cluster-db
+    image: billalmiron/cluster-db:latest
     ports:
       - "9093:8080"
       - "7002:7000"
